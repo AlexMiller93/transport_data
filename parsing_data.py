@@ -1,7 +1,8 @@
 import openpyxl
+from decorators import measure_time, timer
 
 
-def get_headers(path: str)-> list[str]: 
+def get_headers(path: str)-> tuple[str]: 
     """
     Функция открывает файл, берет заголовки из таблицы и помещает в список
     
@@ -22,9 +23,13 @@ def get_headers(path: str)-> list[str]:
         for cell in col:
             headers.append(cell.value)
             
-    return headers
+    headers_tuple = tuple(headers)
+    
+    return headers_tuple
 
 
+@measure_time
+@timer
 def parse_data_from_xl(path: str) -> list[dict]:
     """
     Функция открывает файл, проходит по всем строкам, помешает данные в строке в словарь, а затем в словари добавляются в общий список данных.
@@ -64,10 +69,11 @@ def parse_data_from_xl(path: str) -> list[dict]:
     
     return data
 
-data = parse_data_from_xl('./data/track_data.xlsx')
+if __name__ == '__main__':
+    data = parse_data_from_xl('./data/track_data.xlsx')
 
-for row in data:
-    print(row)
+    # for row in data:
+    #     print(row)
 
 
 
