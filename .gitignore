@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.flaskenv
 
 # Spyder project settings
 .spyderproject
@@ -161,3 +162,4 @@ cython_debug/
 
 
 notes.txt
+task.txt
