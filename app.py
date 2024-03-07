@@ -1,6 +1,6 @@
 from flask import Flask, abort, jsonify, request
 
-from transport_data.database import get_db_connection
+from database import get_db_connection
 
 app = Flask(__name__)
 
@@ -131,4 +131,4 @@ def get_vehicle_track(vehicle_id):
     return jsonify(track), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0",port=5473)
