@@ -31,12 +31,12 @@ $ python parsing_data.py
 - Создание таблицы в базе данных PostGIS для хранения данных из Excel.
 - Написать скрипт для загрузки данных из Excel в созданную таблицу.
 
-Скрипт находится в файле database.py
+Скрипт находится в файле create_database.py
 
 Запуск файла:
 
 ```
-python database.py
+python create_database.py
 ```
 
 3. Создание API:
