@@ -58,7 +58,7 @@ python database.py
 Для запуска Flask api:
 
 ```  
-python app.py
+python manage.py
 ```
 
 4. Настройка Docker:
