@@ -9,6 +9,6 @@ COPY . /transport_data
 
 EXPOSE 80
 
-CMD ["python3", "./app.py"]
+CMD ["python3", "./manage.py"]
 
 

@@ -1,28 +1,5 @@
 version: '3'
 services:
-  flask:
-    # Путь до Dockerfile
-    build: .
-    # Имя для создаваемого контейнера
-    container_name: test_task
-    # Создание переменных окружения в контейнере
-    environment:
-      ## Позволяет отслеживать процесс работы приложения в командной строке
-      - PYTHONUNBUFFERED=True                   
-      
-    # Перезапускаем сервис в случае падения 
-    restart: on-failure
-    # Прокладывам путь для файлов. Все файлы, которые хранятся у вас в 
-    # директории ./transport_data, появятся в директории контейнера /transport_data
-    volumes:
-      - ./transport_data:/transport_data
-    # Открываем порт в контейнер
-    # Порт, который будет смотреть наружу : порт который используется внутри контейнера
-    ports:
-      - "5473:80"
-    command: python app.py
-
-
   postgres:
     restart: always
     image: postgres:16
